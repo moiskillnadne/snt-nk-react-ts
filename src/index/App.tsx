@@ -1,18 +1,19 @@
-import React from "react";
+import React from 'react'
 
 function App() {
   return (
-    <div className='App'>
+    <div className="App">
       Hello react
       <br />
       <button
         onClick={() => {
-          alert("Hello, thank u");
-        }}>
+          alert('Hello, thank u')
+        }}
+      >
         clickme
       </button>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
