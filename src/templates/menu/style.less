@@ -1,0 +1,25 @@
+@main_green: rgba(115, 153, 1, 0.5);
+
+.menu_wrap {
+  grid-area: menu;
+}
+
+.menu {
+  display: grid;
+  background-color: @main_green;
+
+
+  &_item {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: black;
+    transition: 150ms;
+
+    &:hover {
+      color: black;
+      background-color: rgba(115, 153, 1, 0.53);
+    }
+  }
+}

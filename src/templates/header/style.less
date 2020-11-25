@@ -1,0 +1,34 @@
+@grass_img: url(../../shared/images/summer.jpg);
+
+header {
+  width: 100%;
+  height: 200px;
+  display: grid;
+  position: relative;
+  overflow: hidden;
+
+  grid-area: header;
+}
+
+.title {
+  justify-self: center;
+  align-self: center;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+
+  h1 {
+    font-size: 40px;
+  }
+}
+
+.grass_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: @grass_img;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(0px);
+}

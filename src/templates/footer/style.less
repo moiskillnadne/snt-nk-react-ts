@@ -1,0 +1,29 @@
+@grass_img: url(../../shared/images/summer.jpg);
+
+footer {
+  display: grid;
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  color: white;
+
+  grid-area: footer;
+}
+
+.footer_info {
+  z-index: 1;
+  justify-self: center;
+  align-self: center;
+}
+
+.grass_background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: @grass_img;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: blur(0px);
+}

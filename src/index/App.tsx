@@ -1,17 +1,18 @@
 import React from 'react'
 
-function App() {
+// Components
+import Header from '@/templates/header/header'
+import Footer from '@/templates/footer/footer'
+import RouteManager from '@/index/router'
+import Menu from '@/templates/menu/menu'
+
+function App(): JSX.Element {
   return (
     <div className="App">
-      Hello react
-      <br />
-      <button
-        onClick={() => {
-          alert('Hello, thank u')
-        }}
-      >
-        clickme
-      </button>
+      <Header />
+      <Menu />
+      <RouteManager />
+      <Footer />
     </div>
   )
 }
