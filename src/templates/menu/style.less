@@ -7,19 +7,25 @@
 .menu {
   display: grid;
   background-color: @main_green;
+  overflow: hidden;
+  height: 100%;
 
 
   &_item {
-    width: 100%;
-    text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    width: calc(100% - 15px);
+    text-align: start;
+    padding: 15px 0px 15px 15px;
     color: black;
     transition: 150ms;
 
     &:hover {
       color: black;
       background-color: rgba(115, 153, 1, 0.53);
+    }
+
+    &_active {
+      background-color: rgba(115, 153, 1, 0.8);
+      color: black;
     }
   }
 }

@@ -11,22 +11,22 @@ const routes = [
   },
   {
     name: 'ОРГАНЫ УПРАВЛЕНИЯ И КОНТРОЛЯ',
-    link: '/control',
+    link: '/managment',
     active: false,
   },
   {
     name: 'ОСНОВНЫЕ ДОКУМЕНТЫ',
-    link: '/documents',
+    link: '/document/main',
     active: false,
   },
   {
     name: 'ДОКУМЕНТЫ СНТ',
-    link: '/extra-documents',
+    link: '/document/snt',
     active: false,
   },
   {
     name: 'НАШИ ПРАВИЛА',
-    link: '/rules',
+    link: '/ourrules',
     active: false,
   },
   {
@@ -46,7 +46,7 @@ const routes = [
   },
   {
     name: 'РЕКВИЗИТЫ ДЛЯ ОПЛАТЫ',
-    link: '/payments',
+    link: '/paymentdata',
     active: false,
   },
   {
@@ -56,7 +56,7 @@ const routes = [
   },
   {
     name: 'НАПИСАТЬ НАМ',
-    link: '/feedback',
+    link: '/feedbackform',
     active: false,
   },
 ]
