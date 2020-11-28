@@ -1,15 +1,20 @@
-import React, { useState } from 'react'
+import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '@/templates/menu/style.less'
 
 // Constants
 import routes from '@/constants/routes'
 
-const Menu = (): JSX.Element => {
+type MenuProps = {
+  menuActive: boolean
+}
+
+const Menu: FC<MenuProps> = (props): JSX.Element => {
+  const { menuActive } = props
   const [, forceRender] = useState({})
 
   return (
-    <div className="menu_wrap">
+    <div className={menuActive ? 'menu_wrap menu_wrap_active' : 'menu_wrap'}>
       <nav className="menu">
         {routes.map((route) => (
           <Link
