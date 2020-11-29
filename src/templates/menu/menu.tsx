@@ -7,10 +7,11 @@ import routes from '@/constants/routes'
 
 type MenuProps = {
   menuActive: boolean
+  setMenuActive: (menuActive: boolean) => void
 }
 
 const Menu: FC<MenuProps> = (props): JSX.Element => {
-  const { menuActive } = props
+  const { menuActive, setMenuActive } = props
   const [, forceRender] = useState({})
 
   return (
@@ -39,6 +40,13 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     // Search onCLICK item menu
     routes[nextActiveIndex].active = true
     forceRender({})
+
+    const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(
+      navigator.userAgent,
+    )
+    if (isMobile) {
+      setMenuActive(!menuActive)
+    }
   }
 }
 

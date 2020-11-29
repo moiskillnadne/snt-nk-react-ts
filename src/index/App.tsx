@@ -12,7 +12,7 @@ function App(): JSX.Element {
   return (
     <div className="App">
       <Header menuActive={menuActive} setMenuActive={setMenuActive} />
-      <Menu menuActive={menuActive} />
+      <Menu menuActive={menuActive} setMenuActive={setMenuActive} />
       <RouteManager />
       <Footer />
 
