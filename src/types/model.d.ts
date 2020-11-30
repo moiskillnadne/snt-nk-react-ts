@@ -11,3 +11,9 @@ export type DocModel = {
   link: string
   date: string
 }
+
+export type FormModel = {
+  name: string
+  email: string
+  content: string
+}
