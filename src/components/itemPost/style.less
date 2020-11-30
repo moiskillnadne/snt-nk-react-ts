@@ -1,0 +1,36 @@
+@grey: #505053;
+@light_grey: rgba(80, 80, 80, 0.7);
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+}
+
+.inner {
+  /* Outside */
+  max-width: 950px;
+  padding: 10px;
+
+  &-title {
+    align-self: center;
+  }
+
+  &-text {
+    padding: 10px;
+  }
+
+  &-date {
+    color: @grey;
+    align-self: center;
+
+    p {
+      display: block;
+      width: 85px;
+      text-align: center;
+      padding: 5px 10px;
+      background-color: lighten(@light_grey, 60%);
+      border-radius: 10px;
+    }
+  }
+}

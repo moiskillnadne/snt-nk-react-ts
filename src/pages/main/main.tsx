@@ -3,9 +3,10 @@ import axios from 'axios'
 import '@/pages/main/style.less'
 
 // Components
-import Item from '@/pages/main/item'
+import NewsItem from '@/components/itemPost/item'
 
 type ItemModel = {
+  id: string
   title: string
   news: string
   date: string
@@ -25,14 +26,7 @@ const Main = (): JSX.Element => {
 
         <div>
           {news.map((item: ItemModel) => {
-            return (
-              <Item
-                title={item.title}
-                news={item.news}
-                date={item.date}
-                key={item.date + item.title + item.news.substr(0, 10)}
-              />
-            )
+            return <NewsItem id={item.id} title={item.title} content={item.news} date={item.date} key={item.id} />
           })}
         </div>
       </div>

@@ -17,16 +17,19 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
   return (
     <div className={`menu_wrap ${menuActive ? 'menu_wrap_active' : ''}`}>
       <nav className="menu">
-        {routes.map((route) => (
-          <Link
-            key={`${route.name}${route.link}`}
-            to={route.link}
-            className={`menu_item ${route.active ? 'menu_item_active' : ''}`}
-            onClick={() => switchActive(route.name)}
-          >
-            <h4>{route.name}</h4>
-          </Link>
-        ))}
+        {routes.map((route) => {
+          const link = window.location.href.replace('http://localhost:3000', '')
+          return (
+            <Link
+              key={`${route.name}${route.link}`}
+              to={route.link}
+              className={`menu_item ${link === route.link ? 'menu_item_active' : ''}`}
+              onClick={() => switchActive(route.name)}
+            >
+              <h4>{route.name}</h4>
+            </Link>
+          )
+        })}
       </nav>
     </div>
   )

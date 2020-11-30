@@ -3,7 +3,7 @@ import axios from 'axios'
 import '@/pages/documentSnt/style.less'
 
 // Components
-import Document from '@/pages/documentSnt/item'
+import DocumentItem from '@/components/itemDoc/item'
 
 type DocumentModel = {
   id: string
@@ -26,7 +26,7 @@ const DocumentSnt = (): JSX.Element => {
       </div>
       <div className="document-list">
         {extraDocs.map((item: DocumentModel) => {
-          return <Document title={item.title} link={item.link} date={item.date} key={item.id} />
+          return <DocumentItem id={item.id} title={item.title} link={item.link} date={item.date} key={item.id} />
         })}
       </div>
     </div>
