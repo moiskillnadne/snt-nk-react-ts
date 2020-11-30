@@ -15,15 +15,13 @@ const Document: FC<DocumentProps> = (props): JSX.Element => {
         <h4 className="document-file">{title}</h4>
       </div>
 
-      <div>
+      <div className="wrap-document-link">
         <a href={link} target="_blank" rel="noopener noreferrer" className="document-link">
           Посмотреть документ
         </a>
       </div>
 
       <div className="date-stamp">{date}</div>
-
-      {/* <span className="split-line" /> */}
     </div>
   )
 }

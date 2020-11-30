@@ -15,13 +15,13 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
   const [, forceRender] = useState({})
 
   return (
-    <div className={menuActive ? 'menu_wrap menu_wrap_active' : 'menu_wrap'}>
+    <div className={`menu_wrap ${menuActive ? 'menu_wrap_active' : ''}`}>
       <nav className="menu">
         {routes.map((route) => (
           <Link
             key={`${route.name}${route.link}`}
             to={route.link}
-            className={route.active ? 'menu_item menu_item_active' : 'menu_item'}
+            className={`menu_item ${route.active ? 'menu_item_active' : ''}`}
             onClick={() => switchActive(route.name)}
           >
             <h4>{route.name}</h4>

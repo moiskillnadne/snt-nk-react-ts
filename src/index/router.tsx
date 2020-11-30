@@ -11,6 +11,7 @@ import DocumentSnt from '@/pages/documentSnt/documentSnt'
 import OurRules from '@/pages/ourRules/ourRules'
 import Contacts from '@/pages/contacts/contacts'
 import Information from '@/pages/information/information'
+import Debtors from '@/pages/debtors/debtors'
 import PaymentData from '@/pages/paymentData/paymentData'
 import Faq from '@/pages/faq/faq'
 import FeedbackForm from '@/pages/feedbackForm/feedbackForm'
@@ -27,6 +28,7 @@ export default function RouteManager(): JSX.Element {
         <Route path="/ourrules" component={OurRules} />
         <Route path="/contacts" component={Contacts} />
         <Route path="/information" component={Information} />
+        <Route path="/debtors" component={Debtors} />
         <Route path="/paymentdata" component={PaymentData} />
         <Route path="/faq" component={Faq} />
         <Route path="/feedbackform" component={FeedbackForm} />

@@ -19,7 +19,7 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
 
       <button
         type="button"
-        className={menuActive ? 'menu_burger activeStatus' : 'menu_burger'}
+        className={`menu_burger  ${menuActive ? 'activeStatus' : ''}`}
         onClick={() => setMenuActive(!menuActive)}
       >
         <span />

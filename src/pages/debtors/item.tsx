@@ -6,7 +6,7 @@ type DocumentProps = {
   date: string
 }
 
-const Document: FC<DocumentProps> = (props): JSX.Element => {
+const Document: FC<DocumentProps> = (props) => {
   const { title, link, date } = props
 
   return (
@@ -22,8 +22,6 @@ const Document: FC<DocumentProps> = (props): JSX.Element => {
       </div>
 
       <div className="date-stamp">{date}</div>
-
-      {/* <span className="split-line" /> */}
     </div>
   )
 }
