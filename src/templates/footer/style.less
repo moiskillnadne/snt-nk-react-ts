@@ -15,7 +15,6 @@ footer {
   z-index: 1;
   justify-self: center;
   align-self: center;
-
 }
 
 .grass_background {
@@ -26,5 +25,26 @@ footer {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: blur(0px);
+  filter: brightness(0.85);
 }
+
+
+// Extra large devices (large desktops, 1200px and down)
+@media (max-width: 1200px) {}
+
+// Large devices (desktops, 992px and down)
+@media (max-width: 992px) {}
+
+// Medium devices (tablets, 768px and down)
+@media (max-width: 768px) {
+  .footer_info {
+    padding: 10px;
+
+    h3 {
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 576px) {}

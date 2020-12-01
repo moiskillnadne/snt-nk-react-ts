@@ -16,7 +16,7 @@ function App(): JSX.Element {
       <RouteManager />
       <Footer />
 
-      <div className={menuActive ? 'app-blur-on' : 'app-blur-off'} />
+      <div className={`app-blur ${menuActive ? 'blur' : 'noblur'}`} />
     </div>
   )
 }

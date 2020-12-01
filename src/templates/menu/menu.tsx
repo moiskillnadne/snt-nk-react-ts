@@ -18,12 +18,12 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     <div className={`menu_wrap ${menuActive ? 'menu_wrap_active' : ''}`}>
       <nav className="menu">
         {routes.map((route) => {
-          const link = window.location.href.replace('http://localhost:3000', '')
+          const { pathname } = window.location
           return (
             <Link
               key={`${route.name}${route.link}`}
               to={route.link}
-              className={`menu_item ${link === route.link ? 'menu_item_active' : ''}`}
+              className={`menu_item ${pathname === route.link ? 'menu_item_active' : ''}`}
               onClick={() => switchActive(route.name)}
             >
               <h4>{route.name}</h4>
@@ -42,14 +42,16 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     routes[currentActiveIndex].active = false
     // Search onCLICK item menu
     routes[nextActiveIndex].active = true
-    forceRender({})
 
     const isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(
       navigator.userAgent,
     )
+
     if (isMobile) {
       setMenuActive(!menuActive)
     }
+
+    forceRender({})
   }
 }
 

@@ -15,8 +15,8 @@ const History = (): JSX.Element => {
         <div className="history-video">
           <iframe
             title="youtube-video"
-            width="640"
-            height="360"
+            width={window.screen.availWidth < 450 ? 368 : 640}
+            height={window.screen.availWidth < 450 ? 216 : 360}
             src="https://www.youtube.com/embed/Q7nP-dkgLAg"
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

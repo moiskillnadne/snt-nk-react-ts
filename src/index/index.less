@@ -43,20 +43,24 @@ a {
 }
 
 .app-blur {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  transition: 0.3s all;
+  backdrop-filter: blur(10px);
+}
 
-  &-on {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    backdrop-filter: blur(10px);
-    transition: 0.3s all;
-    z-index: 2;
-    transform: translateY(0px);
-  }
+.blur {
+  transform: translateY(0px);
+}
 
-  &-off {
-    transform: translateY(-1000px);
-  }
+.noblur {
+  transform: translateY(-1500px);
+}
+
+.noscroll {
+  overflow: hidden;
 }
 
 .container {

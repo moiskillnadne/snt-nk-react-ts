@@ -17,15 +17,20 @@ const Header: FC<HeaderProps> = (props): JSX.Element => {
         <h1>НИЖНЯЯ КОЛОНИЯ</h1>
       </div>
 
-      <button
-        type="button"
-        className={`menu_burger  ${menuActive ? 'activeStatus' : ''}`}
-        onClick={() => setMenuActive(!menuActive)}
-      >
+      <button type="button" className={`menu_burger  ${menuActive ? 'activeStatus' : ''}`} onClick={onMenuBurgerClick}>
         <span />
       </button>
     </header>
   )
+
+  function onMenuBurgerClick() {
+    setMenuActive(!menuActive)
+    if (!menuActive) {
+      window.document.body.classList.add('noscroll')
+    } else {
+      window.document.body.classList.remove('noscroll')
+    }
+  }
 }
 
 export default Header
