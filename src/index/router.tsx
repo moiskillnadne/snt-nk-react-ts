@@ -16,6 +16,13 @@ import PaymentData from '@/pages/paymentData/paymentData'
 import Faq from '@/pages/faq/faq'
 import FeedbackForm from '@/pages/feedbackForm/feedbackForm'
 
+// Content manager
+import AddNews from '@/pages/add/news/news'
+import AddDocumentMain from '@/pages/add/documentMain/documentMain'
+import AddDocumentSnt from '@/pages/add/documentSnt/documentSnt'
+import AddDebtors from '@/pages/add/debtors/debtors'
+import AddFaq from '@/pages/add/faq/faq'
+
 export default function RouteManager(): JSX.Element {
   return (
     <div className="content">
@@ -32,6 +39,19 @@ export default function RouteManager(): JSX.Element {
         <Route path="/paymentdata" component={PaymentData} />
         <Route path="/faq" component={Faq} />
         <Route path="/feedbackform" component={FeedbackForm} />
+
+        {/* For adding data to website */}
+        <Route path="/add/news" component={AddNews} />
+        <Route path="/add/docs" component={AddDocumentMain} />
+        <Route path="/add/extradocs" component={AddDocumentSnt} />
+        <Route path="/add/faq" component={AddFaq} />
+        <Route path="/add/debtors" component={AddDebtors} />
+
+        {/* For removing data from website */}
+        {/* <Route path="/remove/news" component={} />
+        <Route path="/remove/docs" component={} />
+        <Route path="/remove/extradocs" component={} />
+        <Route path="/remove/debtors" component={} /> */}
       </Switch>
     </div>
   )
