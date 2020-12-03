@@ -14,7 +14,7 @@ const Document: FC<DocModel> = (props): JSX.Element => {
         </div>
         <div className="inner-doc-button">
           <a href={link} target="_blank" rel="noopener noreferrer">
-            Посмотреть документ
+            {window.screen.availWidth < 450 ? 'Посмотреть' : 'Посмотреть документ'}
           </a>
         </div>
         <div className="inner-doc-date">

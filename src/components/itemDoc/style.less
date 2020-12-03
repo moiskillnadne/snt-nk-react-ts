@@ -55,3 +55,41 @@
     }
   }
 }
+
+
+// Extra large devices (large desktops, 1200px and down)
+@media (max-width: 1200px) {}
+
+// Large devices (desktops, 992px and down)
+@media (max-width: 992px) {}
+
+// Medium devices (tablets, 768px and down)
+@media (max-width: 768px) {}
+
+@media (max-width: 576px) {
+  .inner-doc {
+
+    &-title {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    &-date {
+      padding-left: 10px;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    &-button {
+      padding-right: 10px;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+  }
+}

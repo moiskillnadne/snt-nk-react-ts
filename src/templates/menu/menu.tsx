@@ -48,6 +48,7 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     )
 
     if (isMobile) {
+      window.document.body.classList.remove('noscroll')
       setMenuActive(!menuActive)
     }
 
