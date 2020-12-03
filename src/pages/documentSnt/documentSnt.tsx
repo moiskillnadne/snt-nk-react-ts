@@ -16,7 +16,7 @@ const DocumentSnt = (): JSX.Element => {
   const [extraDocs, setExtraDocs] = useState([])
 
   useEffect(() => {
-    axios.get('/extra-docs/get').then((res) => setExtraDocs(res.data.list))
+    axios.get('/api/extra-docs/get').then((res) => setExtraDocs(res.data.list))
   }, [])
 
   return (

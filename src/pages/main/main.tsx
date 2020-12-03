@@ -16,7 +16,7 @@ const Main = (): JSX.Element => {
   const [news, setNews] = useState([])
 
   useEffect(() => {
-    axios.get('/news/get').then((res) => setNews(res.data.expiredNews.reverse()))
+    axios.get('/api/news/get').then((res) => setNews(res.data.expiredNews.reverse()))
   }, [])
 
   return (

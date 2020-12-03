@@ -16,7 +16,7 @@ const DocumentMain = (): JSX.Element => {
   const [docs, setDocs] = useState([])
 
   useEffect(() => {
-    axios.get('/docs/get').then((res) => setDocs(res.data.list))
+    axios.get('/api/docs/get').then((res) => setDocs(res.data.list))
   }, [])
 
   return (

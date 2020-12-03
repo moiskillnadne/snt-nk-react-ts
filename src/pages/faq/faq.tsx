@@ -16,7 +16,7 @@ const Faq = (): JSX.Element => {
   const [faq, setFaq] = useState([])
 
   useEffect(() => {
-    axios.get('/faq/get').then((res) => setFaq(res.data.faq.reverse()))
+    axios.get('/api/faq/get').then((res) => setFaq(res.data.faq.reverse()))
   }, [])
 
   return (

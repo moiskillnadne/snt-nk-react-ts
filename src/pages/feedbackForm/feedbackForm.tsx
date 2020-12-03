@@ -70,26 +70,25 @@ const FeedbackForm = (): JSX.Element => {
     </div>
   )
 
-  async function onSubmit(e: FormModel) {
+  function onSubmit(e: FormModel) {
     const EmailEntity = {
-      fullname: e.name,
+      fullName: e.name,
       email: e.email,
       comment: e.content,
       time: DateTime.local().setZone('Europe/Moscow').toFormat('dd.MM.yyyy'),
     }
 
-    const response = await axios({
+    axios({
       method: 'POST',
-      url: '/feedback',
+      url: '/api/feedback',
       data: JSON.parse(JSON.stringify(EmailEntity)),
     })
-    if (response.statusText !== 'ok') {
-      alert('Ошибка! Попробуйте перезагрузить страницу')
-    }
-
-    // Cleaning form
-    setTimeout(() => formState.reset())
-    alert('Письмо успешно отправлено!')
+      .then((res) => {
+        // Cleaning form
+        setTimeout(() => formState.restart())
+        alert('Письмо успешно отправлено!')
+      })
+      .catch((err) => alert('Ошибка! Попробуйте перезагрузить страницу'))
   }
 }
 
