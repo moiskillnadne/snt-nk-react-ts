@@ -4,6 +4,9 @@ import React, { FC, useEffect, useState } from 'react'
 import axios from 'axios'
 import { PostModel } from '@/types/model'
 
+// Components
+import RemoveItem from '@/components/ItemRemove/item'
+
 type RemoveProps = {
   type: 'news' | 'docs' | 'extra-docs' | 'debtors'
 }
@@ -19,19 +22,7 @@ const Remove: FC<RemoveProps> = (props): JSX.Element => {
       <div>
         {news.map((item: PostModel) => {
           return (
-            <div className="item-for-removing" key={item.id}>
-              <div className="item-for-removing-data">
-                <div>
-                  <h3>{item.title}</h3>
-                </div>
-                <div>
-                  <p>{item.date}</p>
-                </div>
-              </div>
-              <button type="button" onClick={() => onHandleClick(item.id)}>
-                Удалить новость
-              </button>
-            </div>
+            <RemoveItem id={item.id} title={item.title} date={item.date} key={item.id} onRemoveClick={onHandleClick} />
           )
         })}
       </div>
