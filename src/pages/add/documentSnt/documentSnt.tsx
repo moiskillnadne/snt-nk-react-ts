@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import AddForm from '@/templates/addForm/addForm'
+import AddForm from '@/templates/add/addForm'
 
 const AddDocumentSnt = (): JSX.Element => {
   return (

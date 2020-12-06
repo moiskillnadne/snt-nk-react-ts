@@ -23,6 +23,11 @@ import AddDocumentSnt from '@/pages/add/documentSnt/documentSnt'
 import AddDebtors from '@/pages/add/debtors/debtors'
 import AddFaq from '@/pages/add/faq/faq'
 
+import NewsRemoving from '@/pages/remove/news/news'
+import DocumentMainRemoving from '@/pages/remove/documentMain/documentMain'
+import DocumentSntRemoving from '@/pages/remove/documentSnt/documentSnt'
+import DebtorsRemoving from '@/pages/remove/debtors/debtors'
+
 export default function RouteManager(): JSX.Element {
   return (
     <div className="content">
@@ -48,10 +53,10 @@ export default function RouteManager(): JSX.Element {
         <Route path="/add/debtors" component={AddDebtors} />
 
         {/* For removing data from website */}
-        {/* <Route path="/remove/news" component={} />
-        <Route path="/remove/docs" component={} />
-        <Route path="/remove/extradocs" component={} />
-        <Route path="/remove/debtors" component={} /> */}
+        <Route path="/remove/news" component={NewsRemoving} />
+        <Route path="/remove/docs" component={DocumentMainRemoving} />
+        <Route path="/remove/extradocs" component={DocumentSntRemoving} />
+        <Route path="/remove/debtors" component={DebtorsRemoving} />
       </Switch>
     </div>
   )

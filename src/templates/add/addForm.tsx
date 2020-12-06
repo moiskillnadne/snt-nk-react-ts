@@ -1,10 +1,12 @@
+/* eslint-disable no-alert */
 /* eslint-disable react/jsx-props-no-spreading */
-import '@/templates/addForm/style.less'
+import '@/templates/add/style.less'
 import React, { FC } from 'react'
 import { Form, Field, FieldRenderProps } from 'react-final-form'
 import axios from 'axios'
 import { DateTime } from 'luxon'
 import { v4 as uuidv4 } from 'uuid'
+import { PostModel } from '@/types/model'
 
 // Components
 import TextField from '@material-ui/core/TextField'
@@ -47,7 +49,7 @@ const AddForm: FC<AddFormProps> = (props): JSX.Element => {
     </div>
   )
 
-  async function submitHandler(e: any) {
+  async function submitHandler(e: Record<string, string>) {
     const { title, content, secret } = e
     const SECRET_CODE = await getSecret()
 
@@ -55,32 +57,30 @@ const AddForm: FC<AddFormProps> = (props): JSX.Element => {
       alert(`${secret} не правильный код`)
       return
     }
-    console.log(submitUrl)
-    console.log(SECRET_CODE)
 
     // Create entity
-    const body = {
+    const body: PostModel = {
       title,
       content,
       date: DateTime.local().setZone('Europe/Moscow').toFormat('dd.MM.yyyy'),
       id: uuidv4(),
     }
 
-    console.log(body)
-
-    // if (Secret === SECRET_CODE) {
-    //   fetch('http://139.162.144.245:5000/news/post', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify(news),
-    //   })
-
-    //   alert('Новость успешно добавлена!')
-    // } else {
-    //   alert('НЕПРАВИЛЬНЫЙ СЕКРЕТНЫЙ КОД')
-    // }
+    axios({
+      method: 'POST',
+      url: submitUrl,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      data: body,
+    })
+      .then(() => {
+        formState.restart()
+        alert('Успешно добавлено!')
+      })
+      .catch((err) => {
+        alert(`Ошибка сервера. Новость не добавлена! ${err.status}`)
+      })
   }
 
   async function getSecret() {

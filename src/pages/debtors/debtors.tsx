@@ -16,7 +16,7 @@ const Debtors = (): JSX.Element => {
   const [docs, setDocs] = useState([])
 
   useEffect(() => {
-    axios.get('/api/debtors/get').then((res) => setDocs(res.data.list))
+    axios.get('/api/debtors/get').then((res) => setDocs(res.data.content.reverse()))
   }, [])
 
   return (
