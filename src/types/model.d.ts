@@ -23,4 +23,5 @@ export type RouteModel = {
   link: string
   active: boolean
   disabled: boolean
+  submenu: []
 }

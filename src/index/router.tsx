@@ -6,8 +6,10 @@ import { Route, Switch } from 'react-router-dom'
 import Main from '@/pages/main/main'
 import History from '@/pages/history/history'
 import Managment from '@/pages/managment/managment'
+import Document from '@/pages/document/document'
 import DocumentMain from '@/pages/document/main/main'
 import DocumentSnt from '@/pages/document/snt/snt'
+import DocumentGovernment from '@/pages/document/government/government'
 import OurRules from '@/pages/ourRules/ourRules'
 import Contacts from '@/pages/contacts/contacts'
 import Information from '@/pages/information/information'
@@ -35,8 +37,12 @@ export default function RouteManager(): JSX.Element {
         <Route exact path="/" component={Main} />
         <Route path="/history" component={History} />
         <Route path="/managment" component={Managment} />
+
         <Route path="/document/main" component={DocumentMain} />
         <Route path="/document/snt" component={DocumentSnt} />
+        <Route path="/document/government" component={DocumentGovernment} />
+        <Route path="/document" component={Document} />
+
         <Route path="/ourrules" component={OurRules} />
         <Route path="/contacts" component={Contacts} />
         <Route path="/information" component={Information} />

@@ -6,14 +6,12 @@
 }
 
 .menu {
-  display: grid;
   overflow: hidden;
-  height: 100%;
-  max-height: 650px;
   background-color: @main_green;
 
 
   &_item {
+    display: block;
     width: calc(100% - 15px);
     text-align: start;
     padding: 15px 0px 15px 15px;
@@ -30,18 +28,9 @@
       color: black;
     }
   }
-
-  .group-title {
-    color: grey;
-    background-color: rgba(115, 153, 1, 0.3);
-    pointer-events: none;
-  }
-
-  .group {
-    padding: 15px 0px 15px 20px;
-    border-left: 20px solid rgba(115, 153, 1, 0.3);
-  }
 }
+
+
 
 // Extra large devices (large desktops, 1200px and down)
 @media (max-width: 1200px) {}
@@ -69,7 +58,7 @@
   }
 
   .menu {
-    max-height: 600px;
+    max-height: calc(50px * 14);
     align-self: center;
     background-color: rgba(0, 0, 0, 0);
   }

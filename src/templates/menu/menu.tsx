@@ -19,14 +19,16 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     <div className={`menu_wrap ${menuActive ? 'menu_wrap_active' : ''}`}>
       <nav className="menu">
         {routes.map((route: RouteModel) => {
+          const { pathname } = window.location
+          const { name, link } = route
           return (
             <Link
-              key={`${route.name}${route.link}`}
-              to={route.link}
-              className={`menu_item ${classNameAssigner(route)}`}
-              onClick={() => switchActive(route.name)}
+              key={`${name}${link}`}
+              to={link}
+              className={`menu_item ${pathname === link ? 'menu_item_active' : ''}`}
+              onClick={() => switchActive(name)}
             >
-              <h4>{route.name}</h4>
+              <h4>{name}</h4>
             </Link>
           )
         })}
@@ -53,17 +55,6 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     }
 
     forceRender({})
-  }
-
-  function classNameAssigner(route: RouteModel): string {
-    const { link, disabled } = route
-    const { pathname } = window.location
-
-    const menuItemActive = pathname === link ? 'menu_item_active' : ''
-    const group = link.includes('/document/') ? 'group' : ''
-    const groupTitle = disabled ? 'group-title' : ''
-
-    return `${menuItemActive} ${group} ${groupTitle}`
   }
 }
 
