@@ -4,6 +4,7 @@ import '@/pages/faq/style.less'
 
 // Components
 import FaqItem from '@/components/itemPost/item'
+import Empty from '@/components/emptyList/empty'
 
 type FaqModel = {
   id: string
@@ -31,9 +32,13 @@ const Faq = (): JSX.Element => {
           </p>
         </div>
         <div>
-          {faq.map((item: FaqModel) => {
-            return <FaqItem id={item.id} title={item.question} content={item.answer} date={item.date} key={item.id} />
-          })}
+          {faq.length === 0 ? (
+            <Empty listName="ответов" />
+          ) : (
+            faq.map((item: FaqModel) => {
+              return <FaqItem id={item.id} title={item.question} content={item.answer} date={item.date} key={item.id} />
+            })
+          )}
         </div>
       </div>
     </div>

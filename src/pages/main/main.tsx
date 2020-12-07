@@ -4,6 +4,7 @@ import '@/pages/main/style.less'
 
 // Components
 import NewsItem from '@/components/itemPost/item'
+import Empty from '@/components/emptyList/empty'
 
 type ItemModel = {
   id: string
@@ -25,9 +26,13 @@ const Main = (): JSX.Element => {
         <h2 className="page-title">Актуальные новости</h2>
 
         <div>
-          {news.map((item: ItemModel) => {
-            return <NewsItem id={item.id} title={item.title} content={item.news} date={item.date} key={item.id} />
-          })}
+          {news.length === 0 ? (
+            <Empty listName="постов" />
+          ) : (
+            news.map((item: ItemModel) => {
+              return <NewsItem id={item.id} title={item.title} content={item.news} date={item.date} key={item.id} />
+            })
+          )}
         </div>
       </div>
     </div>

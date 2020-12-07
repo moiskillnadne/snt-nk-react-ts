@@ -4,6 +4,7 @@ import '@/pages/document/snt/style.less'
 
 // Components
 import DocumentItem from '@/components/itemDoc/item'
+import Empty from '@/components/emptyList/empty'
 
 type DocumentModel = {
   id: string
@@ -25,9 +26,13 @@ const DocumentSnt = (): JSX.Element => {
         <h2 className="page-title">Документы садоводства</h2>
       </div>
       <div className="document-list">
-        {extraDocs.map((item: DocumentModel) => {
-          return <DocumentItem id={item.id} title={item.title} link={item.link} date={item.date} key={item.id} />
-        })}
+        {extraDocs.length === 0 ? (
+          <Empty listName="документов" />
+        ) : (
+          extraDocs.map((item: DocumentModel) => {
+            return <DocumentItem id={item.id} title={item.title} link={item.link} date={item.date} key={item.id} />
+          })
+        )}
       </div>
     </div>
   )
