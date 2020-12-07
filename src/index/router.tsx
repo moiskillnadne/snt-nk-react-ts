@@ -22,12 +22,14 @@ import FeedbackForm from '@/pages/feedbackForm/feedbackForm'
 import AddNews from '@/pages/add/news/news'
 import AddDocumentMain from '@/pages/add/documentMain/documentMain'
 import AddDocumentSnt from '@/pages/add/documentSnt/documentSnt'
+import AddDocumentGovernment from '@/pages/add/documentGovernment/documentGovernment'
 import AddDebtors from '@/pages/add/debtors/debtors'
 import AddFaq from '@/pages/add/faq/faq'
 
 import NewsRemoving from '@/pages/remove/news/news'
 import DocumentMainRemoving from '@/pages/remove/documentMain/documentMain'
 import DocumentSntRemoving from '@/pages/remove/documentSnt/documentSnt'
+import DocumentGovernmentRemoving from '@/pages/remove/documentGovernment/documentGovernment'
 import DebtorsRemoving from '@/pages/remove/debtors/debtors'
 
 export default function RouteManager(): JSX.Element {
@@ -55,6 +57,7 @@ export default function RouteManager(): JSX.Element {
         <Route path="/add/news" component={AddNews} />
         <Route path="/add/docs" component={AddDocumentMain} />
         <Route path="/add/extradocs" component={AddDocumentSnt} />
+        <Route path="/add/gov-docs" component={AddDocumentGovernment} />
         <Route path="/add/faq" component={AddFaq} />
         <Route path="/add/debtors" component={AddDebtors} />
 
@@ -62,6 +65,7 @@ export default function RouteManager(): JSX.Element {
         <Route path="/remove/news" component={NewsRemoving} />
         <Route path="/remove/docs" component={DocumentMainRemoving} />
         <Route path="/remove/extradocs" component={DocumentSntRemoving} />
+        <Route path="/remove/gov-docs" component={DocumentGovernmentRemoving} />
         <Route path="/remove/debtors" component={DebtorsRemoving} />
       </Switch>
     </div>

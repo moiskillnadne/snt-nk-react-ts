@@ -8,7 +8,7 @@ import { PostModel } from '@/types/model'
 import RemoveItem from '@/components/ItemRemove/item'
 
 type RemoveProps = {
-  type: 'news' | 'docs' | 'extra-docs' | 'debtors'
+  type: 'news' | 'docs' | 'extra-docs' | 'debtors' | 'docs-government'
 }
 
 const Remove: FC<RemoveProps> = (props): JSX.Element => {
