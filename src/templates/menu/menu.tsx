@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 import '@/templates/menu/style.less'
+import { RouteModel } from '@/types/model'
 
 // Constants
 import routes from '@/constants/routes'
@@ -17,13 +18,12 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
   return (
     <div className={`menu_wrap ${menuActive ? 'menu_wrap_active' : ''}`}>
       <nav className="menu">
-        {routes.map((route) => {
-          const { pathname } = window.location
+        {routes.map((route: RouteModel) => {
           return (
             <Link
               key={`${route.name}${route.link}`}
               to={route.link}
-              className={`menu_item ${pathname === route.link ? 'menu_item_active' : ''}`}
+              className={`menu_item ${classNameAssigner(route)}`}
               onClick={() => switchActive(route.name)}
             >
               <h4>{route.name}</h4>
@@ -53,6 +53,17 @@ const Menu: FC<MenuProps> = (props): JSX.Element => {
     }
 
     forceRender({})
+  }
+
+  function classNameAssigner(route: RouteModel): string {
+    const { link, disabled } = route
+    const { pathname } = window.location
+
+    const menuItemActive = pathname === link ? 'menu_item_active' : ''
+    const group = link.includes('/document/') ? 'group' : ''
+    const groupTitle = disabled ? 'group-title' : ''
+
+    return `${menuItemActive} ${group} ${groupTitle}`
   }
 }
 

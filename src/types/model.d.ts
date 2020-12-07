@@ -17,3 +17,10 @@ export type FormModel = {
   email: string
   content: string
 }
+
+export type RouteModel = {
+  name: string
+  link: string
+  active: boolean
+  disabled: boolean
+}

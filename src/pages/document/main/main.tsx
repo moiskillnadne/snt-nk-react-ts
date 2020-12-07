@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import '@/pages/documentMain/style.less'
+import '@/pages/document/main/style.less'
 
 // Components
 import DocumentItem from '@/components/itemDoc/item'
