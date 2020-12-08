@@ -41,7 +41,7 @@ const routes = [
         submenu: [],
       },
       {
-        name: 'ПРАВЛЕНИЕ',
+        name: 'ПРАВЛЕНИЯ',
         link: '/document/government',
         active: false,
         disabled: false,

@@ -17,7 +17,7 @@ const DocumentGovernment = (): JSX.Element => {
   const [docs, setDocs] = useState([])
 
   useEffect(() => {
-    axios.get('/api/docs-government/get').then((res) => setDocs(res.data.content))
+    axios.get('/api/docs-government/get').then((res) => setDocs(res.data.content.reverse()))
   }, [])
 
   return (
