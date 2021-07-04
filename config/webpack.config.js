@@ -619,7 +619,7 @@ module.exports = function (webpackEnv) {
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
       // Generate a service worker script that will precache, and keep up to date,
       // the HTML & assets that are part of the webpack build.
-      isEnvProduction &&
+      // isEnvProduction &&
       // new WorkboxWebpackPlugin.GenerateSW({
       //     clientsClaim: true,
       //     exclude: [/\.map$/, /asset-manifest\.json$/],
@@ -641,7 +641,7 @@ module.exports = function (webpackEnv) {
         typescript: resolve.sync('typescript', {
           basedir: paths.appNodeModules,
         }),
-        async: isEnvDevelopment,
+        async: isEnvProduction,
         useTypescriptIncrementalApi: true,
         checkSyntacticErrors: true,
         resolveModuleNameModule: process.versions.pnp ?
