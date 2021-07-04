@@ -83,12 +83,12 @@ const FeedbackForm = (): JSX.Element => {
       url: '/api/feedback',
       data: JSON.parse(JSON.stringify(EmailEntity)),
     })
-      .then((res) => {
+      .then(() => {
         // Cleaning form
         setTimeout(() => formState.restart())
         alert('Письмо успешно отправлено!')
       })
-      .catch((err) => alert('Ошибка! Попробуйте перезагрузить страницу'))
+      .catch(() => alert('Ошибка! Попробуйте перезагрузить страницу'))
   }
 }
 

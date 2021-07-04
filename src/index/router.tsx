@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, useLocation } from 'react-router-dom'
 
 // Pages
 import Main from '@/pages/main/main'
@@ -33,9 +33,11 @@ import DocumentGovernmentRemoving from '@/pages/remove/documentGovernment/docume
 import DebtorsRemoving from '@/pages/remove/debtors/debtors'
 
 export default function RouteManager(): JSX.Element {
+  const location = useLocation()
+
   return (
     <div className="content">
-      <Switch>
+      <Switch location={location}>
         <Route exact path="/" component={Main} />
         <Route path="/history" component={History} />
         <Route path="/managment" component={Managment} />

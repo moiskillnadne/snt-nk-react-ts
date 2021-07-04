@@ -641,7 +641,7 @@ module.exports = function (webpackEnv) {
         typescript: resolve.sync('typescript', {
           basedir: paths.appNodeModules,
         }),
-        async: isEnvDevelopment,
+        async: isEnvProduction,
         useTypescriptIncrementalApi: true,
         checkSyntacticErrors: true,
         resolveModuleNameModule: process.versions.pnp ?

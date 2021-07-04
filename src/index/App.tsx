@@ -1,23 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { Router, Route, Switch, useLocation } from 'react-router-dom'
 
 // Components
-import Header from '@/templates/header/header'
-import Footer from '@/templates/footer/footer'
-import RouteManager from '@/index/router'
-import Menu from '@/templates/menu/menu'
+import Auth from '@/pages/auth/auth'
+import ProtectedRoute from '@/components/protectedRoute/protectedRoute'
+import Base from '@/pages/base/base.page'
+import history from './history'
 
 function App(): JSX.Element {
-  const [menuActive, setMenuActive] = useState(false)
-
   return (
-    <div className="App">
-      <Header menuActive={menuActive} setMenuActive={setMenuActive} />
-      <Menu menuActive={menuActive} setMenuActive={setMenuActive} />
-      <RouteManager />
-      <Footer />
+    <Router history={history}>
+      <Navigation />
+    </Router>
+  )
+}
 
-      <div className={`app-blur ${menuActive ? 'blur' : 'noblur'}`} />
-    </div>
+function Navigation() {
+  const location = useLocation()
+  return (
+    <Switch location={location}>
+      <Route exact path="/auth" component={Auth} />
+
+      <ProtectedRoute path="/" component={Base} />
+    </Switch>
   )
 }
 
