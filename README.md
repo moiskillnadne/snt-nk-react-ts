@@ -1,6 +1,22 @@
-# Getting Started with Create React App
+# Getting Started with snt-nk application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+***Production [snt-nk](https://snt-nk.ru/)***
+
+## Set up **production** version
+
+```
+yarn install
+git checkout production
+yarn start
+```
+
+
+## Set up **development** version
+
+```
+yarn install
+yarn start
+```
 
 ## Available Scripts
 
